@@ -15,9 +15,7 @@ jobs:
     container:
       image: rostooling/setup-ros-docker:ubuntu-focal-latest
     steps:
-    # TODO(setup-ros-docker#7): calling chown is necessary for now
-    - run: sudo chown -R rosbuild:rosbuild "$HOME" . "$GITHUB_ENV" "$GITHUB_PATH"
-    - uses: ros-tooling/action-ros-ci@6ba65538a7402752
+    - uses: ros-tooling/action-ros-ci@0.1.0
       with:
         package-name: system_metrics_collector
         colcon-mixin-name: coverage-gcc
@@ -41,9 +39,7 @@ jobs:
     container:
       image: rostooling/setup-ros-docker:ubuntu-focal-latest
     steps:
-    # TODO(setup-ros-docker#7): calling chown is necessary for now
-    - run: sudo chown -R rosbuild:rosbuild "$HOME" .
-    - uses: ros-tooling/action-ros-ci@6ba65538a7402752
+    - uses: ros-tooling/action-ros-ci@0.1.0
       with:
         colcon-mixin-name: asan
         colcon-mixin-repository: https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml
