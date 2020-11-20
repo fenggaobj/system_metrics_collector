@@ -18,4 +18,4 @@ jobs:
           package-name: system_metrics_collector
           target-ros2-distro: foxy
       - name: Run end-to-end test
-        run:  ./test/run_e2e_test.sh
+        run:  ../test/run_e2e_test.sh
